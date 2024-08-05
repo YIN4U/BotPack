@@ -1,12 +1,12 @@
 module.exports.config = {
-  name: "تخيل",
+  name: "img",
   version: "1.0.",
   hasPermssion: 0,
-  credits: "عمر",
-  description: "مدري",
+  credits: "om",
+  description: "mm",
   usePrefix: true,
-  commandCategory: "صور",
-  usages: "ننص",
+  commandCategory: "photo",
+  usages: "text",
   cooldowns: 2,
 };
 
@@ -15,7 +15,7 @@ const axios = require('axios');
 const fs = require('fs-extra');
  let { threadID, messageID } = event;
   let query = args.join(" ");
-  if (!query) return api.sendMessage("الامر ونص", threadID, messageID);
+  if (!query) return api.sendMessage("write something", threadID, messageID);
 let path = __dirname + `/cache/pol4i.png`;
 
   const translationResponse = await axios.get(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q=${encodeURIComponent(query)}`);
@@ -26,6 +26,6 @@ let path = __dirname + `/cache/pol4i.png`;
   })).data;
   fs.writeFileSync(path, Buffer.from(poli, "utf-8"));
   api.sendMessage({
-    body: "تضل الصوره لساعه!",
+    body: "☯️",
     attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID);
 };
