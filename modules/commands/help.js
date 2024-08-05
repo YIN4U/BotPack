@@ -9,9 +9,9 @@ module.exports.config = {
   usages: "[Shows Commands]",
   cooldowns: 5,
   envConfig: {
-		autoUnsend: true,
-		delayUnsend: 60
-	}
+    autoUnsend: true,
+    delayUnsend: 60
+  }
 };
 
 module.exports.languages = {
@@ -28,10 +28,9 @@ module.exports.languages = {
   },
 };
 
-
 module.exports.handleEvent = function ({ api, event, getText }) {
   const { commands } = global.client;
-  const { threadID, messageID, body } = event;  
+  const { threadID, messageID, body } = event;
 
   if (!body || typeof body == "undefined" || body.indexOf("help") != 0)
     return;
@@ -86,11 +85,7 @@ module.exports.run = async function ({ api, event, args, getText }) {
     let currentPage = 1;
     if (args[0]) {
       const parsedPage = parseInt(args[0]);
-      if (
-        !isNaN(parsedPage) &&
-        parsedPage >= 1 &&
-        parsedPage <= totalPages
-      ) {
+      if (!isNaN(parsedPage) && parsedPage >= 1 && parsedPage <= totalPages) {
         currentPage = parsedPage;
       } else {
         return api.sendMessage(
@@ -157,32 +152,9 @@ module.exports.run = async function ({ api, event, args, getText }) {
     } │\n╰ ──────── ╯\n`;
     msg += getText("helpList", commands.size, categoryCount, prefix);
 
-    const axios = require("axios");
-    const fs = require("fs-extra");
-    const imgP = [];
-    const img = [
-      "https://i.imgur.com/ruQ2pRn.jpg",
-      "https://i.imgur.com/HXHb0cB.jpg",
-      "https://i.imgur.com/ZJEI6KW.jpg",
-      "https://i.imgur.com/XGL57Wp.jpg",
-      "https://i.imgur.com/6OB00HJ.jpg",
-      "https://i.imgur.com/6vHaRZm.jpg",
-      "https://i.imgur.com/k6uE93k.jpg"
-    ];
-    const path = __dirname + "/cache/menu.png";
-    const rdimg = img[Math.floor(Math.random() * img.length)];
-
-    const { data } = await axios.get(rdimg, {
-      responseType: "arraybuffer",
-    });
-
-    fs.writeFileSync(path, Buffer.from(data, "utf-8"));
-    imgP.push(fs.createReadStream(path));
-    const config = require("./../../config.json")
     const msgg = {
-  body: `╭──────────────╮\n│𝖢𝗈𝗆𝗆𝖺𝗇𝖽 & 𝖢𝖺𝗍𝖾𝗀𝗈𝗋𝗒│\n╰──────────────╯\n‣ Bot Owner: ${config.DESIGN.Admin}\n\n` + msg + `\n◖Total pages available: ${totalPages}.\n` + `\n╭ ──── ╮\n│ GUIDE │\n╰ ──── ╯\n` + getText("guideList", config.PREFIX),
-  attachment: imgP,
-};
+      body: `╭──────────────╮\n│𝖢𝗈𝗆𝗆𝖺𝗇𝖽 & 𝖢𝖺𝗍𝖾𝗀𝗈𝗋𝗒│\n╰──────────────╯\n` + msg + `\n◖Total pages available: ${totalPages}.\n` + `\n╭ ──── ╮\n│ GUIDE │\n╰ ──── ╯\n` + getText("guideList", prefix)
+    };
 
     const sentMessage = await api.sendMessage(msgg, threadID, messageID);
 
