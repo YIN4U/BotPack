@@ -4,6 +4,8 @@ module.exports.config = {
 	hasPermssion: 0,
 	credits: "عمر",
 	description: "بروفايلك او بروفايل الي تمنشنه او ترد عليه",
+	usePrefix: true, // تفعيل استخدام البادئة
+        allowPrefix: true, // السماح
 	commandCategory: "صور",
 	usages: "ا",
 	cooldowns: 5,
