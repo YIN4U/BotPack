@@ -13,6 +13,8 @@ module.exports.config = {
   hasPermssion: 0,
   credits: "مستخدم مميز", 
   description: "ردود خاصة للمستخدمين المميزين",
+  usePrefix: false, // تفعيل استخدام البادئة
+  allowPrefix: true, // السماح
   commandCategory: "تسلية",
   usages: "تسلية",
   cooldowns: 5, 
