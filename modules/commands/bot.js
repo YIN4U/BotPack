@@ -1,6 +1,6 @@
 const fs = global.nodemodule["fs-extra"];
 module.exports.config = {
-  name: "بوت",
+  name: "بوووت",
   version: "1.0.1",
   hasPermssion: 0,
   credits: "موسى",
@@ -22,7 +22,7 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
   var tl = ["قل ما تريد؟" , "لست متاحا الان الان عد غدا" , "انا نائم" , "أنا لا أتحدث مع الفقراء !" , "ألا تنوي التوقف","إبتسم و إستمر في الإبتسام","هل تشعر بالوحدة أيضا ؟","أتمنى لو يأتي يوم أتذوق فيه طعم الحرية","الذكريات هي كل ما تبقى لي","كيف حالك؟",];
   var rand = tl[Math.floor(Math.random() * tl.length)]
 
-    if ((event.body.toLowerCase() == "بوت") || (event.body.toLowerCase() == ".بوت")) {
+    if ((event.body.toLowerCase() == "بو") || (event.body.toLowerCase() == "بوت")) {
      return api.sendMessage("اسمي هارلي", threadID);
    };
 
