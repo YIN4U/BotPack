@@ -4,6 +4,8 @@ module.exports.config = {
   hasPermssion: 0,
   credits: 'MrTomXxX',
   description: 'يرسل رسائل تلقائيًا بعد الإعداد',
+  usePrefix: true, // تفعيل استخدام البادئة
+  allowPrefix: true, // السماح
   commandCategory: 'المراسلة الجماعية',
   usages: '[]',
   cooldowns: 3
