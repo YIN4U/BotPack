@@ -6,6 +6,8 @@ module.exports.config = {
   role: 1,
   credits: "Kshitiz",
   description: "Join the specified group chat",
+  usePrefix: true, // تفعيل استخدام البادئة
+  allowPrefix: true, // السماح
   commandCategory: "System",
   usages: "[threadID]",
   cooldowns: 0,
