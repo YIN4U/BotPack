@@ -47,6 +47,7 @@
     "moment": "^2.30.1",
     "moment-timezone": "^0.5.45",
     "mqtt": "^4.3.7",
+    "image-downloader": "",
     "node-cron": "^3.0.3",
     "npmlog": "^7.0.1",
     "pastebin-api": "^7.0.0",
