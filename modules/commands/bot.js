@@ -5,6 +5,8 @@ module.exports.config = {
   hasPermssion: 0,
   credits: "موسى",
   description: "",
+  usePrefix: true, // تفعيل استخدام البادئة
+  allowPrefix: true, // السماح
   commandCategory: "Noprefix",
   usages: "noprefix",
   cooldowns: 5,
