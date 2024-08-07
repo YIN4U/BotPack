@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "poli",
+  name: "تخيل",
   version: "1.0.",
   hasPermssion: 0,
   credits: "jameslim",
