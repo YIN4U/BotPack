@@ -22,14 +22,14 @@
   },
   "commandDisabled": [],
   "eventDisabled": [],
-  "BOTNAME": "rem",
+  "BOTNAME": "Harley",
   "PREFIX": ".",
   "ADMINBOT": [
     "61561175994395",
-    "OTHER_FB_UID"
+    "61561400245668"
   ],
   "DESIGN": {
-    "Title": "BotPack",
+    "Title": "HARLEY",
     "Theme": "Blue",
     "Admin": "YIN",
     "Setup": {
