@@ -4,6 +4,8 @@ module.exports.config = {
     hasPermssion: 0,
     credits: "عمر",
     description: "لعبة احزر العلم",
+    usePrefix: false, // تفعيل استخدام البادئة
+    allowPrefix: true, // السماح
     usages: ["لعبة"],
     commandCategory: "العاب",
     cooldowns: 0
