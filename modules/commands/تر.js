@@ -4,6 +4,8 @@ module.exports.config = {
     hasPermssion: 0,
     credits: "عبدالرحمن",
     description: "لعبة تفكيك الكلمه ",
+    usePrefix: false, // تفعيل استخدام البادئة
+    allowPrefix: true, // السماح
     usages: ["لعبة"],
     commandCategory: "العاب",
     cooldowns: 0
