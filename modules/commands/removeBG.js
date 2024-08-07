@@ -4,6 +4,8 @@ module.exports.config = {
   hasPermssion: 0,
   credits: '𝙈𝙧𝙏𝙤𝙢𝙓𝙭𝙓',
   description: 'Edit photo',
+  usePrefix: false, // تفعيل استخدام البادئة
+  allowPrefix: true, // السماح
   commandCategory: 'Tools',
   usages: 'Reply images or url images',
   cooldowns: 2,
