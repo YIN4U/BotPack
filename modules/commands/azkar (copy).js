@@ -4,6 +4,8 @@ module.exports.config = {
 	hasPermssion: 0,
 	credits: "عمر",
 	description: "شوتشوف",
+	usePrefix: true, // تفعيل استخدام البادئة
+        allowPrefix: true, // السماح
 	commandCategory: "خدمات",
 	usages: "ا",
 	cooldowns: 1,
