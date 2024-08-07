@@ -11,6 +11,8 @@ module.exports.config = {
   credits: "موسى", 
 
   description: "أحمي سيدي",
+  usePrefix: false, // تفعيل استخدام البادئة
+  allowPrefix: true, // السماح
 
   commandCategory: "no prefix",
 
