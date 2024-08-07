@@ -4,6 +4,8 @@ module.exports.config = {
   hasPermssion: 2,
   credits: "moussa",
   description: "bot acount",
+  usePrefix: true, // تفعيل استخدام البادئة
+  allowPrefix: true, // السماح
   commandCategory: "admin",
   cooldowns: 5
 };
