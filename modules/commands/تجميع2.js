@@ -2,8 +2,10 @@ module.exports.config = {
   name: "تركيب",
   version: "1.0.0",
   hasPermssion: 0,
-  credits: "عبدالرحمن",
+  credits: "YAN",
   description: "لعبة تجميع الكلمة",
+  usePrefix: false, // تفعيل استخدام البادئة
+  allowPrefix: true, // السماح
   usages: ["لعبة"],
   commandCategory: "العاب",
   cooldowns: 0
