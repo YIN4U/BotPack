@@ -3,7 +3,7 @@
   "language": "en",
   "useEnvForCredentials": false,
   "envGuide": "",
-  "DeveloperMode": false,
+  "DeveloperMode": true,
   "autoCreateDB": true,
   "allowInbox": true,
   "autoClean": true,
@@ -12,7 +12,7 @@
   "encryptSt": true,
   "removeSt": false,
   "UPDATE": {
-    "Package": false,
+    "Package": true,
     "EXCLUDED": [
       "chalk",
       "mqtt",
