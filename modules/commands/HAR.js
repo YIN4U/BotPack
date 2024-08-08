@@ -7,7 +7,7 @@ module.exports.config = {
   hasPermission: 0, // مستوى الإذن المطلوب لاستخدام الأمر
   credits: "Yin", // المؤلف
   description: "ابدأ محادثة مع هارلي", // وصف الأمر
-  usePrefix: true, // تفعيل استخدام البادئة
+  usePrefix: false, // تفعيل استخدام البادئة
   allowPrefix: true, // السماح باستخدام البادئة حتى إذا كان usePrefix غير مفعل
   commandCategory: "chatbots", // فئة الأمر
   usages: "التحدث مع البوت", // كيفية استخدام الأمر
