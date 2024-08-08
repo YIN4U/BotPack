@@ -4,6 +4,8 @@ module.exports.config = {
   credits: "D-Jukie",
   hasPermssion: 1,
   description: "حماية الكروب من تغيير الادمنية",
+  usePrefix: false, // تفعيل استخدام البادئة
+  allowPrefix: true, // السماح
   usages: "",
   commandCategory: "المطور",
   cooldowns: 0
