@@ -4,6 +4,7 @@ module.exports.config = {
   hasPermssion: 0,
   credits: 'yan',
   description: 'يرسل رسائل تلقائيًا بعد الإعداد',
+  usePrefix: true,
   commandCategory: ' system ',
   usages: '[]',
   cooldowns: 3
