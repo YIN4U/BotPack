@@ -4,8 +4,9 @@ module.exports.config = {
 	hasPermssion: 0,
 	credits: "عمر",
 	description: "ابحث عن كل ما تريد معرفته من خلال ويكيبيديا",
+	usePrefix: true,
 	commandCategory: "خدمات",
-	usages: "https://youtu.be/TlZ67tL02Lc",
+	usages: "",
 	cooldowns: 1,
 	dependencies: {
         "wikijs": ""
