@@ -4,6 +4,7 @@ module.exports.config = {
 	hasPermssion: 2,
 	credits: "عمر",
 	description: "عرض جميع معلومات البوت",
+	usePrefix: true,
 	commandCategory: "خدمات",
 	cooldowns: 5,
 	dependencies: {
