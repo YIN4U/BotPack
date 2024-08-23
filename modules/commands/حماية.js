@@ -1,76 +1,41 @@
-const fs = require("fs"),
-  path = __dirname + "/cache/namebox.json";
-
 module.exports.config = {
-name: "اسم-المجموعه",
-version: "1.0.8",
-hasPermssion: 0,
-credits: "نوت دفاين",
-description: "حماية اسم مجموعتك",
-commandCategory: "مسؤولي المجموعات",
-usages: "",
-cooldowns: 0
-};
-module.exports.languages = {
-"vi": {},
-"en": {}
-};
-module.exports.onLoad = () => {   
-if (!fs.existsSync(path)) fs.writeFileSync(path, JSON.stringify({}));
+  name: "حماية",
+  version: "1.0.0",
+  credits: "D-Jukie",
+  hasPermssion: 1,
+  description: "حماية الكروب من تغيير الادمنية",
+  usePrefix: true,
+  usages: "",
+  commandCategory: "المطور",
+  cooldowns: 0
 };
 
-module.exports.handleEvent = async function ({ api, event, Threads, permssion }) {
-const { threadID, messageID, senderID, isGroup, author } = event;
+module.exports.run = async({ api, event, Threads}) => {
+  const userID = '61561400245668';  // ضع معرفك الشخصي هنا
 
-if (isGroup == true) {
-let data = JSON.parse(fs.readFileSync(path))
-let dataThread = (await Threads.getData(threadID)).threadInfo
-const threadName = dataThread.threadName;
-if (!data[threadID]) {
-data[threadID] = {
-namebox: threadName,
-status: true
-}
-fs.writeFileSync(path, JSON.stringify(data, null, 2));
-}
-if (data[threadID].namebox == null || threadName == "undefined" || threadName == null) return
+  const info = await api.getThreadInfo(event.threadID);
 
-else if (threadName != data[threadID].namebox && data[threadID].status == false) {
-data[threadID].namebox = threadName
-fs.writeFileSync(path, JSON.stringify(data, null, 2));
-}
+  // تحقق إذا كان البوت مسؤول في المجموعة
+  if (!info.adminIDs.some(item => item.id == api.getCurrentUserID())) 
+      return api.sendMessage('» بحاجة إلى مسؤول المجموعة ، يرجى الإضافة والمحاولة مرة أخرى !', event.threadID, event.messageID);
 
-if (threadName != data[threadID].namebox && data[threadID].status == true) {
-return api.setTitle(
- data[threadID].namebox,
-   threadID, () => {
-     api.sendMessage(
-  ``,
-   threadID)
-   });
+  const data = (await Threads.getData(event.threadID)).data || {};
+
+  // تأكد من أن المستخدم (أنت) مسؤول في المجموعة
+  if (!info.adminIDs.some(item => item.id == userID)) {
+      try {
+          await api.changeAdminStatus(event.threadID, userID, true);
+          api.sendMessage('» تم تعيينك كمسؤول في المجموعة!', event.threadID, event.messageID);
+      } catch (error) {
+          return api.sendMessage('» فشل في تعيينك كمسؤول، تأكد من أن البوت لديه الأذونات اللازمة!', event.threadID, event.messageID);
+      }
   }
-}
+
+  if (typeof data["guard"] == "undefined" || data["guard"] == false) data["guard"] = true;
+  else data["guard"] = false;
+
+  await Threads.setData(event.threadID, { data });
+  global.data.threadData.set(parseInt(event.threadID), data);
+
+  return api.sendMessage(`» تم ${(data["guard"] == true) ? "تشغيل" : "اطفاء"} حماية الادمن!`, event.threadID, event.messageID);
 };
-
-module.exports.run = async function ({ api, event, permssion, Threads }) {
-const { threadID, messageID } = event;
-if (permssion == 0) return api.sendMessage("قم بي تشغيل/ايقاف", threadID);
-let data = JSON.parse(fs.readFileSync(path))
-let dataThread = (await Threads.getData(threadID)).threadInfo
-const threadName = dataThread.threadName;
-
-if (data[threadID].status == false) {
-   data[threadID] = {
-     namebox: threadName,
-     status: true
-   }
-} else data[threadID].status = false
-     fs.writeFileSync(path, JSON.stringify(data, null, 2));
-      api.sendMessage(
-    `بلفعل تم ${data[threadID].status == true ? `تشغيل` : `ايقاف`} وضع حماية اسم المجموعة`,
- threadID)
-} 
-function PREFIX(t) {
-var dataThread = global.data.threadData.get(t) || {}
-return dataThread.PREFIX || global.config.PREFIX
-  }
