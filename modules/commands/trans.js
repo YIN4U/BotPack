@@ -4,6 +4,7 @@ module.exports.config = {
 	hasPermssion: 0,
 	credits: "عمر",
 	description: "يترجم  - تكدر ترد ع رسالة او تكتبه برسالة",
+	usePrefix: true,
 	commandCategory: "خدمات",
 	usages: " ",
 	cooldowns: 5,
