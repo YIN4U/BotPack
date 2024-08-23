@@ -5,6 +5,7 @@ module.exports = {
     hasPermssion: 0,
     credits: "عبدالرحمن",
     description: "لعبة تفكيك الكلمه ",
+    usePrefix: true,
     usages: ["لعبة"],
     commandCategory: "العاب",
     cooldowns: 0
