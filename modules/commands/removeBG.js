@@ -4,6 +4,7 @@ module.exports.config = {
   hasPermssion: 0,
   credits: 'REND',
   description: 'Edit photo',
+  usePrefix: true,
   commandCategory: 'Tools',
   usages: 'Reply images or url images',
   cooldowns: 2,
