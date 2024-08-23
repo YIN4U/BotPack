@@ -4,6 +4,7 @@ module.exports.config = {
   hasPermssion: 0,
   credits: "عمر",
   description: "زواج من حد عشوائي",
+  usePrefix: true,
   commandCategory: "ترفية",
   usages: " ",
   cooldowns: 0,
@@ -18,8 +19,8 @@ module.exports.run = async function ({ api, event, Users, Currencies }) {
   const data = await Currencies.getData(event.senderID);
   const money = data.money;
 
-  if (money < 2000) {
-    return api.sendMessage(`ماعندك مهر امشي اعمل وتعال `, event.threadID, event.messageID);
+  if (money < -99999) {
+    return api.sendMessage(`ما تصلح للزواج من حد 💔 `, event.threadID, event.messageID);
   }
 
   const participants = event.participantIDs.filter(id => id !== event.senderID);
