@@ -7,6 +7,7 @@ module.exports.config = {
   hasPermssion: 0,
   credits: "Yin",
   description: "ابدأ محادثة مع هارلي",
+  usePrefix: true,
   commandCategory: "chatbots",
   usages: "التحدث مع البوت",
   cooldowns: 2,
