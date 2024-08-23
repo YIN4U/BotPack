@@ -4,6 +4,7 @@ module.exports.config = {
 	hasPermssion: 0,
 	credits: "عمر",
 	description: " حط صورتك خلف القضبان او الي تمنشنه او الي ترد عليه ",
+	usePrefix: true,
 	commandCategory: "صور",
 	usages: " ",
 	cooldowns: 5,
