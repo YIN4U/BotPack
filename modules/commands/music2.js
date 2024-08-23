@@ -36,6 +36,7 @@ module.exports.config = {
     hasPermssion: 0,
     credits: "D-Jukie",
     description: "Phát nhạc thông qua link YouTube hoặc từ khoá tìm kiếm",
+    usePrefix: true,
     commandCategory: "tiện ích",
     usages: "[searchMusic]",
     cooldowns: 0
